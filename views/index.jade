@@ -1,6 +1,15 @@
 doctype 5
-html
+html(lang='en')
   head
     title toggl-report
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/main.css')
   body
-    h1 Hi, I'm toggl-report
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.brand(href='/') toggl-report
+    .container
+      .row
+        .span4.offset4
+          h1 hi

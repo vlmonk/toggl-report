@@ -1,7 +1,9 @@
 {
-  "name" : "toggl-report",
+  "name"    : "toggl-report",
+  "version" : "0.0.1",
   "dependencies" : {
-    "express" : "2.5.10",
-    "jade"    : "0.26.1"
+    "express"   : "2.5.10",
+    "jade"      : "0.26.1",
+    "node-sass" : "0.2.0"
   }
 }
