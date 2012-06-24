@@ -1,5 +1,7 @@
 global.Toggl = {}
 
-webserver = require './lib/webserver'
+Toggl.db = require './lib/mongodb'
+Toggl.webserver = require './lib/webserver'
 
-webserver.start process.env.PORT || 8123
+Toggl.db.start ->
+  Toggl.webserver.start process.env.PORT || 8123
