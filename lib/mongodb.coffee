@@ -1,16 +1,10 @@
 mongo = require 'mongodb'
 instance = null
 
-exports.start = (cb) ->
-  server = new mongo.Server 'localhost', 27017, { auto_reconnect: true}
-  db     = new mongo.Db 'toggl-db', server
-
-  db.open (err, db) ->
-    if err
-      console.info 'error mongodb: ' + err
-    else
-      instance = db
-      cb()
+exports.start = (url, cb) ->
+  mongo.Db.connect url, (err, db) ->
+    instance = db
+    cb()
 
 exports.readSetting = (key, cb) ->
   instance.collection 'settings', (err, collection) ->
