@@ -10,6 +10,7 @@ exports.start = (port) ->
     debug: true
 
   app.use express.static(__dirname + '/../public')
+  app.use require('connect-assets')()
   app.set 'views', __dirname + '/../views'
 
   app.get '/', (req, res) ->
